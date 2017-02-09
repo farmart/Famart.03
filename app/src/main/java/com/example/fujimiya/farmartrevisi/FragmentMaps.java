@@ -142,7 +142,7 @@ public class FragmentMaps extends Fragment implements OnMapReadyCallback {
                             LatLng FlKomoditi = new LatLng(latt, lonn);
                             //Toast.makeText(getActivity().getApplication(),""+FlKomoditi ,Toast.LENGTH_LONG).show();
 
-                            mMap.addMarker(new MarkerOptions().position(FlKomoditi).title(username)).setSnippet(key);
+                            mMap.addMarker(new MarkerOptions().position(FlKomoditi).title(username));
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(FlKomoditi, 17));
                         }
 
