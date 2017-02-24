@@ -15,7 +15,7 @@ public class CustomerDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Intent i;
-    public static String name;
+    public static String name,key;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,7 @@ public class CustomerDrawer extends AppCompatActivity
         setSupportActionBar(toolbar);
         i = getIntent();
         name = i.getStringExtra("nama");
+        key = i.getStringExtra("key");
 
 
         FragmentMaps mapsFragment = new FragmentMaps();

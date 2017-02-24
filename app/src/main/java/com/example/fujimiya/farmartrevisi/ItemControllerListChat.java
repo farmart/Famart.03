@@ -63,7 +63,7 @@ public class ItemControllerListChat extends RecyclerView.ViewHolder implements V
         //tampilkan toas ketika click
         urut = Integer.parseInt(String.format("%d", getAdapterPosition()));
         i = new Intent(v.getContext(),ChatActivity.class);
-        i.putExtra("to",MyRecyclerAdapterListChat.Fto.get(urut));
+        i.putExtra("to",MyRecyclerAdapterListChat.Ffrom.get(urut));
         i.putExtra("from",MyRecyclerAdapterListChat.Ffrom.get(urut));
         i.putExtra("nama",ChatListFragment.nama);
         Toast.makeText(v.getContext(),"To : "+MyRecyclerAdapterListChat.Fto.get(urut)+" From : "+MyRecyclerAdapterListChat.Ffrom.get(urut),Toast.LENGTH_LONG).show();

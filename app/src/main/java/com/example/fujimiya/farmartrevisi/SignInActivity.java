@@ -88,6 +88,7 @@ public class SignInActivity extends AppCompatActivity {
                             Intent i = new Intent(SignInActivity.this, CustomerDrawer.class);
                             //i.putExtra("key",child.getKey().toString());
                             i.putExtra("nama",nama);
+                            i.putExtra("key",child.getKey().toString());
                             //i.putExtra("password",password);
                             //i.putExtra("lat",lat);
                             //i.putExtra("lon",lon);

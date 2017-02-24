@@ -63,7 +63,7 @@ public class ItemControllerListPenjualanProfil extends RecyclerView.ViewHolder i
         view = v;
         //tampilkan toas ketika click
         urut = Integer.parseInt(String.format("%d", getAdapterPosition()));
-        //i = new Intent(v.getContext(), DetailListPenjualanActivity.class);
+        i = new Intent(v.getContext(), BeliActivity.class);
         Firebase.setAndroidContext(v.getContext());
 
         FUref = new Firebase("https://farmartcorp.firebaseio.com/anggota");
@@ -84,19 +84,17 @@ public class ItemControllerListPenjualanProfil extends RecyclerView.ViewHolder i
                         String komo = (String) child.child("komoditi").getValue();
                         String harga = (String) child.child("harga").getValue();
                         String gambar = (String) child.child("gambar").getValue();
-                        String spek = (String) child.child("spesifikasi").getValue();
                         kunci = key;
                         Toast.makeText(view.getContext(), FUref.child(key).getKey().toString(), Toast.LENGTH_LONG).show();
                         urut = 0;
-/*
-                        i.putExtra("kunci",kunci);
+
+                        //i.putExtra("kunci",kunci);
                         i.putExtra("komoditi",komo);
                         i.putExtra("harga",harga);
                         i.putExtra("gambar",gambar);
-                        i.putExtra("spesifikasi",spek);
                         view.getContext().startActivity(i);
 
-*/
+
                         }
 
                     }

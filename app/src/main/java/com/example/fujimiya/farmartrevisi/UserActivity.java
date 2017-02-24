@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class UserActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    String kunci,nama,password;
+    public static String kunci,nama,password;
     public static Double lat,lon;
     DialogInterface.OnClickListener listener;
     @Override
@@ -117,7 +117,7 @@ public class UserActivity extends AppCompatActivity
             i.putExtra("nama",nama);
             startActivity(i);
 
-        } else if (id == R.id.nav_penawaran) {
+        } else if (id == R.id.nav_pesan) {
 
             ChatListFragment chatListFragment = new ChatListFragment();
             Bundle bundle = new Bundle();
@@ -153,6 +153,14 @@ public class UserActivity extends AppCompatActivity
             i.putExtra("nama",nama);
             i.putExtra("password",password);
             startActivity(i);
+        }else if (id == R.id.nav_penawaran){
+            PenawaranFragment penawaranFragment = new PenawaranFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("kunci",kunci);
+            penawaranFragment.setArguments(bundle);
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragmen_maps,penawaranFragment );
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
